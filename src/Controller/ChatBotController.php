@@ -11,6 +11,7 @@ namespace App\Controller;
 use Doctrine\ORM\Query;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ChatBotController extends AbstractController
 {

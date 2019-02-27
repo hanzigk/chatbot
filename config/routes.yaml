@@ -3,8 +3,8 @@
 #    controller: App\Controller\DefaultController::index
 chatbot_home:
   path:     /chatbot/
-  defaults: { _controller: App:ChatBot:index }
+  controller: App\Controller\ChatBotController::indexAction
 
 chatbot_query:
   path:     /chatbot/query
-  defaults: { _controller: App:ChatBot:query }
+  controller: App\Controller\ChatBotController::queryAction

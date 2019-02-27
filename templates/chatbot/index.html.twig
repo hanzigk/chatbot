@@ -49,7 +49,7 @@
 <body style="background-color: RGB(31,31,31)">
 
 
-<script type="text/javascript" src="/bundles/ivoryckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/bundles/fosckeditor/ckeditor.js"></script>
 
 <script>
     var checkSystem = function () {
@@ -143,20 +143,21 @@
 </script>
 
 {#logo#}
-<div class="row bg-primary" style="margin-right: 0">
+{#<div class="row bg-primary" style="margin-right: 0">
     <div class="col-sm-1 col-xs-1"></div>
     <div class="col-sm-2 col-xs-11"><h1><a href="{{ path('homepage') }}" style="text-decoration: none;color: white;"
                                            onclick="_czc.push(['_trackEvent', 'logo', '点击']);">SharEDITor</a></h1></div>
-</div>
+</div>#}
 
 <br />
 {#正文#}
+<script type="text/javascript" src="bundles/fosckeditor/ckeditor.js"></script>
 <div class="row">
     <div class="col-sm-2 col-xs-1"></div>
     <div class="col-sm-4 col-xs-10">
         <div id="rabbit-left" style="position: absolute;left: -50px; top: 400px;display: none;"><img width="50px" height="62px" src="http://www.shareditor.com/uploads/media/default/0001/01/thumb_415_default_big.png"/></div>
         <div class="row">
-            <textarea id="chatarea" style="background-color: #00A6C7">
+            <textarea id="chatarea" name="chatarea"  style="background-color: #00A6C7">
                 <div id="container-div" style="padding:10px;padding-top: 50px;
                 background-image:url(http://www.shareditor.com/uploads/media/default/0001/01/thumb_416_default_big.png);
                 background-repeat:no-repeat;
@@ -169,6 +170,7 @@
                     <div style='color: blue; text-align: left; padding: 5px;'>小二兔: 啥?你问我怎么这么聪明会聊天?因为我刚刚吃了一堆影视剧字幕!</div>
                 </div>
             </textarea>
+
         </div>
 
         <div id="info" style="color: #FFFFFF; height:20px;"></div>
@@ -186,42 +188,11 @@
         <div class="hidden-xs" style="color: #959595; height:20px;">觉得小二兔还有些答非所问?你也可以参照右面的文章自己训练一个</div>
 
     </div>
-    <div class="col-sm-4 hidden-xs">
-
-        <div class="row">
-            <div class="col-sm-4">
-                <h4 style="color: #FFFFFF; border-bottom: 1px solid #695d69; padding-bottom: 10px; margin-top: 10px;">
-                    官方微信公众号
-                </h4>
-                <a href="http://{{ app.request.httphost }}/images/weixinpub.jpg"
-                   target="_blank"
-                >
-                    <img src="http://{{ app.request.httphost }}/images/weixinpub.jpg" width="100%" height="100%" style=""/>
-                </a>
-            </div>
-            <div class="col-sm-1">
-                <a href="https://github.com/warmheartli"
-                   target="_blank"
-                   onclick="_czc.push(['_trackEvent', 'github链接', '点击']);"
-                >
-                    <div class="fa fa-github fa-3x" style="margin-top: 100px;"></div>
-                </a>
-            </div>
-
-            <div class="col-sm-1">
-                <a href="http://weibo.com/chuangwanglaile"
-                   target="_blank"
-                   onclick="_czc.push(['_trackEvent', 'weibo链接', '点击']);"
-                >
-                    <div class="fa fa-weibo fa-3x" style="margin-top: 100px;"></div>
-                </a>
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
 
 
 
-        <h4 style="color: #FFFFFF; border-bottom: 1px solid #695d69; padding-bottom: 10px; margin-top: 30px;">
+
+        {#<h4 style="color: #FFFFFF; border-bottom: 1px solid #695d69; padding-bottom: 10px; margin-top: 30px;">
             最热文章</h4>
         {% for article in tophotblogs %}
 
@@ -234,8 +205,8 @@
                 >{{ article.title }}</a>
             </div>
 
-        {% endfor %}
-        <br/>
+        {% endfor %}#}
+        {#<br/>#}
     </div>
     <div class="col-sm-2 col-xs-1"></div>
 </div>
