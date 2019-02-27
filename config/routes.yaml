@@ -1,3 +1,10 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+chatbot_home:
+  path:     /chatbot/
+  defaults: { _controller: App:ChatBot:index }
+
+chatbot_query:
+  path:     /chatbot/query
+  defaults: { _controller: App:ChatBot:query }
