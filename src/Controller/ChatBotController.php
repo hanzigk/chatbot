@@ -27,11 +27,18 @@ class ChatBotController extends AbstractController
             'http'=>array(
                 'method'=>"GET",
                 'timeout'=>60,
+
             )
         );
         $context = stream_context_create($opts);
         $clientIp = $request->getClientIp();
-        $response = file_get_contents('http://10.162.223.224:8765/?q=' . urlencode($q) . '&clientIp=' . $clientIp, false, $context);
+
+        $newurl="127.0.0.1:8765/?q=" . urlencode($q) . "&clientIp=". $clientIp;
+        $ch=curl_init($newurl);
+        curl_setopt($ch,CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+
+        //$response = file_get_contents($newurl, false, $context);
+        $response=curl_exec($ch);
         $res = json_decode($response, true);
         $total = $res['total'];
         $result = '';
